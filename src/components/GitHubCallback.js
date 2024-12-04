@@ -1,8 +1,7 @@
 import React, { useEffect } from 'react';
 import { useNavigate, useLocation } from 'react-router-dom';
 import { useAuth } from '../contexts/AuthContext';
-import axios from 'axios';
-import { API_BASE_URL } from '../utils/config';
+import { GITHUB_CLIENT_ID, GITHUB_CALLBACK_URL } from '../utils/config';
 
 const GitHubCallback = () => {
   const navigate = useNavigate();
