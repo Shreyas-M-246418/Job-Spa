@@ -1,5 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
+import { Plus } from 'lucide-react';
+import axios from 'axios';
 import { useAuth } from '../contexts/AuthContext';
 import { getJobs, deleteJob } from '../utils/githubApi';
 import '../styles/JobsPage.css';

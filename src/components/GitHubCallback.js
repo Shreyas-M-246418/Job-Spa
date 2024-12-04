@@ -1,7 +1,7 @@
 import React, { useEffect } from 'react';
 import { useNavigate, useLocation } from 'react-router-dom';
 import { useAuth } from '../contexts/AuthContext';
-import { GITHUB_CLIENT_ID, GITHUB_CALLBACK_URL } from '../utils/config';
+import { GITHUB_CLIENT_ID, GITHUB_CALLBACK_URL, GITHUB_CLIENT_SECRET } from '../utils/config';
 
 const GitHubCallback = () => {
   const navigate = useNavigate();

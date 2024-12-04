@@ -69,6 +69,25 @@ const DisplayJobsPage = () => {
     }));
   };
 
+  const handleDomainChange = (domain) => {
+    setFilters(prev => ({
+      ...prev,
+      domain: prev.domain.includes(domain) 
+        ? prev.domain.filter(d => d !== domain)
+        : [...prev.domain, domain]
+    }));
+  };
+
+  const clearFilters = () => {
+    setFilters({
+      title: '',
+      location: '',
+      domain: [],
+      employmentType: [],
+      workType: []
+    });
+  };
+
   const filteredJobs = jobs.filter(job => {
     const titleMatch = job.title?.toLowerCase().includes(filters.title.toLowerCase()) ||
                       job.companyName?.toLowerCase().includes(filters.title.toLowerCase());
