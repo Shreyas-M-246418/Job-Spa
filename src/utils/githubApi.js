@@ -1,4 +1,4 @@
-const GITHUB_TOKEN = process.env.REACT_APP_GITHUB_TOKEN;
+const getGithubToken = () => process.env.REACT_APP_GITHUB_TOKEN;
 const REPO_OWNER = 'Shreyas-M-246418';
 const REPO_NAME = 'Job-Spa';
 
@@ -8,7 +8,7 @@ export const getJobs = async () => {
       `https://api.github.com/repos/${REPO_OWNER}/${REPO_NAME}/contents/data/jobs.json`,
       {
         headers: {
-          Authorization: `token ${GITHUB_TOKEN}`,
+          Authorization: `token ${getGithubToken()}`,
           Accept: 'application/vnd.github.v3+json'
         }
       }
@@ -34,7 +34,7 @@ export const updateJobs = async (jobs) => {
       {
         method: 'PUT',
         headers: {
-          Authorization: `token ${GITHUB_TOKEN}`,
+          Authorization: `token ${getGithubToken()}`,
           'Content-Type': 'application/json',
         },
         body: JSON.stringify({
